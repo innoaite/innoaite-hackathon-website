@@ -24,27 +24,21 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${inter.variable} ${spaceGrotesk.variable}`}
     >
-      <head>
-        <meta charSet="UTF-8" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0"
-        />
+      <body className="font-inter bg-bg-dark text-white antialiased">
 
         {/* GSAP Animations */}
         <Script
           src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
         />
         <Script
           src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
         />
-      </head>
 
-      <body className="font-inter bg-bg-dark text-white antialiased">
         {children}
       </body>
     </html>
