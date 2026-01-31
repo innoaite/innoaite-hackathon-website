@@ -9,10 +9,10 @@ export default function Marquee() {
 
   return (
     <section className="py-8 border-y border-gray-800 overflow-hidden">
-      <div className="animate-marquee flex gap-12 whitespace-nowrap">
+      <div className="animate-marquee flex gap-8 md:gap-12 whitespace-nowrap">
         {[...items, ...items].map((item, index) => (
-          <div key={index} className="flex items-center gap-12">
-            <span className="font-space-grotesk text-lg font-medium gradient-text">
+          <div key={index} className="flex items-center gap-8 md:gap-12">
+            <span className="font-space-grotesk text-base md:text-lg font-medium gradient-text">
               {item}
             </span>
             {index < items.length * 2 - 1 && (

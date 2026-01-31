@@ -72,27 +72,7 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Coordinators */}
-          <div>
-            <h4 className="text-sm uppercase tracking-widest font-medium mb-4">Coordinators</h4>
-            <div className="space-y-4">
-              <div>
-                <div className="text-xs uppercase tracking-wider text-gray-500 mb-1">Faculty in Charge</div>
-                <div className="text-gray-400">
-                  Dr. [Faculty Name]
-                  <br />
-                  +91‑9XXXXXXXXX
-                </div>
-              </div>
-              <div>
-                <div className="text-xs uppercase tracking-wider text-gray-500 mb-1">Student Coordinators</div>
-                <div className="text-gray-400 space-y-1">
-                  <div>[Student 1 Name]</div>
-                  <div>[Student 2 Name]</div>
-                </div>
-              </div>
-            </div>
-          </div>
+          {/* Coordinators - Removed */}
 
           {/* Status */}
           <div>

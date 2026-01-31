@@ -1,25 +1,42 @@
-export default function CTA() {
+import React, { useLayoutEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+const CTA = () => {
+  const comp = useRef(null);
+
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.from(".cta-inner", {
+        scrollTrigger: {
+          trigger: "#cta",
+          start: "top 80%",
+        },
+        opacity: 0,
+        scale: 0.94,
+        duration: 0.9,
+        ease: "power3.out",
+      });
+    }, comp);
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section id="cta" className="section-padding bg-gradient-to-b from-bg-dark to-gray-900/50">
-      <div className="container-custom max-w-4xl text-center">
-        <div className="section-subtitle">READY TO BUILD?</div>
-        <h2 className="section-title mb-6">Join YUKTHI and ship your next big idea.</h2>
-        <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
-          Form your team, pick a track, and bring your vision. We'll provide
-          the space, mentors, and caffeine.
+    <section id="cta" className="section section-cta" ref={comp}>
+      <div className="section-inner cta-inner">
+        <h2 className="cta-title">Ready to Build the Future?</h2>
+        <p className="cta-text">
+          Join the brightest minds at CET Payyanur for 24 hours of innovation, coding, and fun.
         </p>
-        <a
-          href="https://example.com/your-registration-form"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block px-10 py-4 rounded-full bg-gradient-to-r from-accent-blue to-accent-violet text-white font-medium text-lg hover:shadow-[0_0_60px_rgba(79,70,229,0.9)] transition-all duration-300 mb-4"
-        >
-          Open Registration Form
+        <a href="https://example.com/register" className="btn-large nav-register">
+          Register Now
         </a>
-        <p className="text-gray-500 text-sm">
-          Replace the link above with your actual registration URL when you're ready to share it.
-        </p>
+        <p className="cta-note">Applications close January 25, 2026</p>
       </div>
     </section>
-  )
-}
+  );
+};
+
+export default CTA;

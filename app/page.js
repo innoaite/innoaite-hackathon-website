@@ -2,14 +2,14 @@
 
 import Navbar from './components/Layout/Navbar'
 import BackgroundElements from './components/Layout/BackgroundElements'
-import Footer from './components/Layout/Footer'
-import Banner from './components/Sections/Banner'
+import Footer from './components/Layout/Footer'// Re-trigger build
 import Hero from './components/Sections/Hero'
 import Marquee from './components/Sections/Marquee'
 import About from './components/Sections/About'
-import Features from './components/Sections/Features'
-import CTA from './components/Sections/CTA'
-import Contact from './components/Sections/Contact'
+import Tracks from './components/Sections/Tracks'
+import Timeline from './components/Sections/Timeline'
+import Prizes from './components/Sections/Prizes'
+import FAQ from './components/Sections/FAQ'
 import { useGSAPAnimations, useMouseParallax } from '@/lib/gsap-init'
 
 export default function Home() {
@@ -23,13 +23,13 @@ export default function Home() {
       <Navbar />
       
       <main>
-        <Banner />
         <Hero />
         <Marquee />
         <About />
-        <Features />
-        <CTA />
-        <Contact />
+        <Tracks />
+        <Timeline />
+        <Prizes />
+        <FAQ />
       </main>
 
       <Footer />

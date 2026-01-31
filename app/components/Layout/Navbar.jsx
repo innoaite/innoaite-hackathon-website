@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Button from '../UI/Button'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -92,7 +93,10 @@ export default function Navbar() {
           {[
             { label: 'Home', id: 'hero' },
             { label: 'About', id: 'about' },
-            { label: 'Tracks', id: 'features' },
+            { label: 'Tracks', id: 'tracks' },
+            { label: 'Timeline', id: 'timeline' },
+            { label: 'Prizes', id: 'prizes' },
+            { label: 'FAQ', id: 'faq' },
           ].map((item) => (
             <a
               key={item.id}
@@ -115,21 +119,13 @@ export default function Navbar() {
         </nav>
 
         {/* Register Button */}
-        <a
+        <Button
           href="#cta"
           onClick={(e) => scrollToSection(e, 'cta')}
-          className={`
-            inline-flex items-center justify-center rounded-full font-semibold
-            text-slate-900 bg-gradient-to-r from-indigo-500 to-purple-500
-            transition-all duration-200
-            hover:brightness-110 hover:-translate-y-0.5
-            active:translate-y-0
-            shadow-[0_10px_40px_rgba(79,70,229,0.6)]
-            ${isMobile ? 'px-4 py-1.5 text-xs' : 'px-5 py-2 text-sm'}
-          `}
+          className={`${isMobile ? 'px-4 py-1.5 text-xs' : 'px-5 py-2 text-sm'} text-slate-900`}
         >
           Register Now
-        </a>
+        </Button>
       </div>
     </header>
   )
