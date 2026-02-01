@@ -3,25 +3,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Trophy, Medal, Gift, Sparkles } from 'lucide-react';
+import Button from '../UI/Button';
 
 const prizes = [
-  {
-    icon: <Medal className="w-12 h-12" />,
-    rank: '2nd Place',
-    amount: '₹15,000',
-    perks: ['Silver Certificate', 'Swag Kit', 'Mentorship'],
-    color: 'text-slate-300',
-    gradient: 'from-slate-300/20 to-slate-400/5',
-    border: 'border-slate-400/30 hover:border-slate-300/50',
-    glow: 'hover:shadow-slate-400/20',
-    order: 'md:order-1',
-    delay: 0.2
-  },
   {
     icon: <Trophy className="w-16 h-16" />,
     rank: '1st Place',
     amount: '₹25,000',
-    perks: ['Gold Certificate', 'Premium Swag', 'Incubation Opportunity'],
+    perks: ['Certificate', 'Mentorship'],
     color: 'text-yellow-400',
     gradient: 'from-yellow-400/20 to-yellow-500/5',
     border: 'border-yellow-400/50 hover:border-yellow-400/70',
@@ -32,9 +21,21 @@ const prizes = [
   },
   {
     icon: <Medal className="w-12 h-12" />,
+    rank: '2nd Place',
+    amount: '₹15,000',
+    perks: ['Certificate', 'Mentorship'],
+    color: 'text-slate-300',
+    gradient: 'from-slate-300/20 to-slate-400/5',
+    border: 'border-slate-400/30 hover:border-slate-300/50',
+    glow: 'hover:shadow-slate-400/20',
+    order: 'md:order-1',
+    delay: 0.2
+  },
+  {
+    icon: <Medal className="w-12 h-12" />,
     rank: '3rd Place',
     amount: '₹10,000',
-    perks: ['Bronze Certificate', 'Swag Kit', 'Mentorship'],
+    perks: ['Certificate', 'Mentorship'],
     color: 'text-amber-600',
     gradient: 'from-amber-600/20 to-amber-700/5',
     border: 'border-amber-600/30 hover:border-amber-500/50',
@@ -173,6 +174,23 @@ export default function Prizes() {
               </ul>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Register CTA Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.6, duration: 0.5 }}
+          className="mt-16 flex justify-center"
+        >
+          <Button
+            href="#cta"
+            className="px-10 py-4 text-lg md:text-xl font-bold tracking-wide shadow-[0_20px_50px_rgba(79,70,229,0.5)] hover:shadow-[0_20px_60px_rgba(79,70,229,0.6)]"
+            aria-label="Register for the hackathon"
+          >
+            Register Now
+          </Button>
         </motion.div>
       </div>
     </section>

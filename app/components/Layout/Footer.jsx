@@ -9,7 +9,8 @@ import {
   Linkedin,
   Mail,
   Instagram,
-  Heart
+  Heart,
+  Phone
 } from
   'lucide-react';
 const socialLinks = [
@@ -195,20 +196,30 @@ export default function Footer() {
             }}>
 
             <h3 className="text-white font-semibold mb-4">Contact Us</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-4">
               <li>
-                <a
-                  href="mailto:contact@yukthi2026.com"
-                  className="flex items-center gap-2 text-slate-400 hover:text-violet-400 transition-colors">
-
-                  <Mail className="w-4 h-4" />
-                  <span>contact@yukthi2026.com</span>
+                <div className="text-sm font-medium text-violet-400 mb-1">Staff Coordinator</div>
+                <div className="text-white text-sm">Aitha MP</div>
+                <a href="tel:+919496309911" className="flex items-center gap-2 text-slate-400 hover:text-violet-400 transition-colors mt-1 text-sm">
+                  <Phone className="w-3 h-3" />
+                  <span>+91 94963 09911</span>
                 </a>
               </li>
-              <li className="text-slate-400">
-                Payyanur, Kerala
-                <br />
-                India
+              <li>
+                <div className="text-sm font-medium text-violet-400 mb-1">Student Coordinator</div>
+                <div className="text-white text-sm">Muhammed Juraij NP</div>
+                <a href="tel:+917306883114" className="flex items-center gap-2 text-slate-400 hover:text-violet-400 transition-colors mt-1 text-sm">
+                  <Phone className="w-3 h-3" />
+                  <span>+91 73068 83114</span>
+                </a>
+              </li>
+              <li className="pt-2">
+                <a
+                  href="mailto:Innoaite@gmail.com"
+                  className="flex items-center gap-2 text-slate-400 hover:text-violet-400 transition-colors text-sm">
+                  <Mail className="w-4 h-4" />
+                  <span>Innoaite@gmail.com</span>
+                </a>
               </li>
             </ul>
           </motion.div>

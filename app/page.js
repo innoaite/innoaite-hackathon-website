@@ -27,8 +27,8 @@ export default function Home() {
         <Marquee />
         <About />
         <Tracks />
-        <Timeline />
         <Prizes />
+        <Timeline />
         <FAQ />
       </main>
 
