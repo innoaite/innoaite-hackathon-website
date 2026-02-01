@@ -3,12 +3,14 @@
 import Navbar from './components/Layout/Navbar'
 import BackgroundElements from './components/Layout/BackgroundElements'
 import Footer from './components/Layout/Footer'
-import Banner from './components/Sections/Banner'
 import Hero from './components/Sections/Hero'
 import Marquee from './components/Sections/Marquee'
 import About from './components/Sections/About'
-import Features from './components/Sections/Features'
+import Tracks from './components/Sections/Tracks'
+import Prizes from './components/Sections/Prizes'
 import CTA from './components/Sections/CTA'
+import Sponsors from "./components/Sections/Sponsors";
+import FAQ from './components/Sections/FAQ'
 import Contact from './components/Sections/Contact'
 import { useGSAPAnimations, useMouseParallax } from '@/lib/gsap-init'
 
@@ -22,13 +24,16 @@ export default function Home() {
       <BackgroundElements />
       <Navbar />
       
-      <main>
-        <Banner />
+      <main className="bg-slate-950 text-white overflow-x-hidden">
+
         <Hero />
         <Marquee />
         <About />
-        <Features />
+        <Tracks />
+        <Prizes />
         <CTA />
+        <Sponsors />
+        <FAQ />
         <Contact />
       </main>
 

@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -51,7 +52,7 @@ export default function Navbar() {
     >
       <div
         className={`
-          max-w-6xl mx-auto px-5 py-2.5 flex items-center justify-between gap-6
+          max-w-6xl mx-auto px-5 py-3 flex items-center justify-between gap-6
           rounded-full pointer-events-auto border border-slate-400/40
           transition-all duration-300
           bg-gradient-to-br from-slate-900/95 via-slate-900/90 to-gray-900/95
@@ -60,39 +61,27 @@ export default function Navbar() {
           ${isMobile && !scrolled ? 'max-w-[94%]' : ''}
         `}
       >
-        {/* Logo / Hackathon Name */}
-        <div className="flex items-center gap-3">
-          <span
-            className={`
-              flex items-center justify-center rounded-lg font-bold
-              bg-gradient-to-br from-indigo-600 to-purple-600 text-white
-              ${isMobile ? 'w-7 h-7 text-sm' : 'w-8 h-8 text-base'}
-            `}
-          >
-            I
-          </span>
-
-          <div className="flex flex-col leading-none">
-            <span
-              className={`
-                font-['Space_Grotesk'] font-semibold tracking-wide text-white
-                ${isMobile ? 'text-lg' : 'text-xl'}
-              `}
-            >
-              InnoAIte
-            </span>
-            <span className="text-[10px] tracking-widest text-gray-400 uppercase">
-              Gen-AI Hackathon · YUKTHI ’26
-            </span>
-          </div>
+        {/* Logo (Bigger & Clear) */}
+        <div className="flex items-center h-10 md:h-12">
+          <Image
+            src="/assets/logo_innoaite.png"
+            alt="InnoAIte Logo"
+            width={300}
+            height={300}
+            priority
+            className="h-full w-auto object-contain"
+          />
         </div>
 
         {/* Navigation Links */}
-        <nav className="hidden md:flex items-center gap-6 text-xs uppercase tracking-widest">
+        <nav className="hidden md:flex items-center gap-6 text-sm uppercase tracking-widest">
           {[
             { label: 'Home', id: 'hero' },
             { label: 'About', id: 'about' },
-            { label: 'Tracks', id: 'features' },
+            { label: 'Tracks', id: 'tracks' },
+            { label: 'Prizes', id: 'prizes' },
+            { label: 'Sponsors', id: 'sponsors' },
+            { label: 'FAQ', id: 'faq' },
           ].map((item) => (
             <a
               key={item.id}
@@ -118,17 +107,17 @@ export default function Navbar() {
         <a
           href="#cta"
           onClick={(e) => scrollToSection(e, 'cta')}
-          className={`
+          className="
             inline-flex items-center justify-center rounded-full font-semibold
-            text-slate-900 bg-gradient-to-r from-indigo-500 to-purple-500
-            transition-all duration-200
-            hover:brightness-110 hover:-translate-y-0.5
+            bg-white px-5 py-2 text-sm
+            transition-all duration-300
+            hover:-translate-y-0.5 hover:shadow-[0_0_25px_rgba(168,85,247,0.8)]
             active:translate-y-0
-            shadow-[0_10px_40px_rgba(79,70,229,0.6)]
-            ${isMobile ? 'px-4 py-1.5 text-xs' : 'px-5 py-2 text-sm'}
-          `}
+          "
         >
-          Register Now
+          <span className="bg-gradient-to-r from-indigo-600 to-purple-500 bg-clip-text text-transparent">
+            Register Now
+          </span>
         </a>
       </div>
     </header>
