@@ -11,7 +11,8 @@ export default function CountdownTimer() {
   })
 
   useEffect(() => {
-    const targetDate = new Date("2026-01-27T09:00:00").getTime()
+    // Set target date to February 15, 2026 at 10:00 AM
+    const targetDate = new Date("2026-02-15T10:00:00").getTime()
 
     const updateCountdown = () => {
       const now = new Date().getTime()
