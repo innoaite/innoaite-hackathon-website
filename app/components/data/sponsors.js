@@ -2,7 +2,7 @@ export const sponsors = [
   {
     id: 1,
     name: "COSMOS",
-    logo: "", // dummy path
+    logo: "/COSMOS_LOGO.png",
     type: "main",
   },
 ];
