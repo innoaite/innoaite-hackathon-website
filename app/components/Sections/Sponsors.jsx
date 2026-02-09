@@ -21,7 +21,6 @@ export default function Sponsors() {
       id="sponsors"
       className="relative py-5 px-4 md:px-8 overflow-hidden"
     >
-
       <div className="max-w-6xl mx-auto relative">
         {/* Header */}
         <div className="text-center mb-14">
@@ -40,32 +39,38 @@ export default function Sponsors() {
         </div>
 
         {/* Sponsors Grid */}
-        <div   className={`flex flex-wrap justify-center gap-6 mb-16 ${
-    sponsors.length >= 4 ? "lg:grid lg:grid-cols-4 md:grid md:grid-cols-3" : ""
-  }`}>
+        <div
+          className={`flex flex-wrap justify-center gap-6 mb-16 ${
+            sponsors.length >= 4
+              ? "lg:grid lg:grid-cols-4 md:grid md:grid-cols-3"
+              : ""
+          }`}
+        >
           {sponsors.map((sponsor) => (
-            <div
-              key={sponsor.id}
-              className="bg-slate-900/50 border border-slate-700/50 rounded-xl p-6 flex items-center justify-center min-h-[140px]
-                         hover:border-indigo-500/50 hover:scale-[1.03] transition-all duration-300 group backdrop-blur-sm"
-            >
-              {sponsor.logo ? (
-                <Image
-                  src={sponsor.logo}
-                  alt={sponsor.name}
-                  width={140}
-                  height={70}
-                  className="object-contain opacity-90 group-hover:opacity-100 transition"
-                />
-              ) : (
-                <div className="text-center">
-                  <div className="text-xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-                    {sponsor.name}
-                  </div>
-                  <div className="mt-1 h-1 w-12 mx-auto bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full opacity-70" />
-                </div>
-              )}
-            </div>
+<div
+  key={sponsor.id}
+  className="group bg-slate-900/40 border border-slate-700/50 rounded-2xl p-6
+             flex items-center justify-center min-h-[160px]
+             hover:border-indigo-500/50 hover:scale-[1.03]
+             transition-all duration-300 backdrop-blur-sm"
+>
+  <div
+    className="bg-white rounded-xl px-6 py-4
+               flex items-center justify-center
+               shadow-md
+               group-hover:shadow-[0_0_25px_rgba(99,102,241,0.35)]
+               transition-all duration-300"
+  >
+    <Image
+      src={sponsor.logo}
+      alt={sponsor.name}
+      width={140}
+      height={70}
+      className="object-contain"
+    />
+  </div>
+</div>
+
           ))}
         </div>
 
